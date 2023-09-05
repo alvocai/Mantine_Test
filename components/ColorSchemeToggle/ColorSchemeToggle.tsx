@@ -1,24 +1,26 @@
 import { ActionIcon, Group, useMantineColorScheme } from '@mantine/core';
-import { IconSun, IconMoonStars } from '@tabler/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 export function ColorSchemeToggle() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
   return (
-    <Group position="center" mt="xl">
+    <Group position="center">
       <ActionIcon
         onClick={() => toggleColorScheme()}
-        size="xl"
+        size="lg"
+        /*
         sx={(theme) => ({
-          backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-          color: theme.colorScheme === 'dark' ? theme.colors.yellow[4] : theme.colors.blue[6],
+          backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
+          color: theme.colorScheme === 'dark' ? theme.colors.yellow[4] : theme.colors.gray[7],
         })}
+        */
       >
         {colorScheme === 'dark' ? (
-          <IconSun size={20} stroke={1.5} />
+          <FontAwesomeIcon icon={faSun} size="lg"/>
         ) : (
-          <IconMoonStars size={20} stroke={1.5} />
+          <FontAwesomeIcon icon={faMoon} size="lg"/>
         )}
       </ActionIcon>
     </Group>
